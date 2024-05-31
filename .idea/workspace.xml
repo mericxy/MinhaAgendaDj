@@ -5,14 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8d44ea5a-75bd-461c-839a-69985372be49" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/MinhaAgenda.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/MinhaAgenda.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MinhaAgenda/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/MinhaAgenda/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MinhaAgenda/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/MinhaAgenda/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/core/static/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/views.py" afterDir="false" />
@@ -34,9 +27,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 4
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="2hCdp7naTNzjdsHYYyhbg7f6Ev1" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -52,8 +45,8 @@
     "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.pycharm.django.structure.promotion.once.per.project": "true",
-    "django.template.preview.state": "SHOW_EDITOR_AND_PREVIEW",
-    "git-widget-placeholder": "master",
+    "django.template.preview.state": "SHOW_EDITOR",
+    "git-widget-placeholder": "teste1",
     "ignore.virus.scanning.warn.message": "true",
     "last_opened_file_path": "C:/Users/ericv/PycharmProjects/MinhaAgenda/core/static/js",
     "node.js.detected.package.eslint": "true",
@@ -114,8 +107,18 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1717102172841</updated>
-      <workItem from="1717102174214" duration="12237000" />
+      <workItem from="1717102174214" duration="18599000" />
+      <workItem from="1717179351854" duration="1851000" />
     </task>
+    <task id="LOCAL-00001" summary="Primeiro commit, funcionalidade adicionar e visualizar">
+      <option name="closed" value="true" />
+      <created>1717114511491</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1717114511491</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -134,5 +137,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Primeiro commit, funcionalidade adicionar e visualizar" />
+    <option name="LAST_COMMIT_MESSAGE" value="Primeiro commit, funcionalidade adicionar e visualizar" />
   </component>
 </project>

@@ -4,9 +4,9 @@
 
 <head>
     <style>
-    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
     </style>
-
+    
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,60 +14,88 @@
 </head>
 
 <body>
-    <main class="content">
-        <header class="header">
+    <header class="header">
             <p class="titulo">Minha Agenda</p>
             <p>login</p>
         </header>
+    
+    <main class="content">
+    
         <div class="centralize">
-        
             <div class="mainBox">
-               <div class="boxHeader">
-                       <form method="post" action="{% url 'adicionar_tarefa' %}">
-                        {% csrf_token %}
-                        {{ form.non_field_errors }}
-                        <div class="form-group">
-                            {{ form.nome.label_tag }} 
-                            {% for error in form.nome.errors %}
-                                <div class="text-danger">{{ error }}</div>
-                            {% endfor %}
-                            {{ form.nome }}
-                        </div>
-                        <div class="form-group">
-                            {{ form.categoria.label_tag }}
-                            {% for error in form.categoria.errors %}
-                                <div class="text-danger">{{ error }}</div>
-                            {% endfor %}
-                            {{ form.categoria }}
-                        </div>
-                        <button type="submit" class="btn btn-primary">Add</button>
-                    </form>
-                    
+                <div class="boxHeader">
+                    <button onclick="document.getElementById('addTaskForm').style.display='block'">Adicionar</button>
                 </div>
-            
                 <ul class="taskBox">
                     {% for tarefa in tarefas %}
                         <li>
-                             <p>
+                            <p>
                                 Nome: {{ tarefa.nome }}<br>
                                 Categoria: {{ tarefa.categoria }}<br>
-                                 {% if tarefa.estado == True %}
-                                     Estado: <span style="color: darkgreen;" >Concluido</span>
-                                 {% else %}
-                                     Estado: <span style="color: red">Pendente</span>
-                                 {% endif %}
-                             </p>
+                                Estado: <span style="color: {% if tarefa.estado %}darkgreen{% else %}red{% endif %};">
+                                    {% if tarefa.estado %}Concluido{% else %}Pendente{% endif %}
+                                </span>
+                            </p>
+                            <button onclick="toggleTaskStatus('{{ tarefa.id }}')">
+                                {% if tarefa.estado %}Marcar como Pendente{% else %}Marcar como Concluído{% endif %}
+                            </button>
+                            <button onclick="deleteTask('{{ tarefa.id }}')">Remover</button>
                         </li>
                     {% endfor %}
                 </ul>
-            
+            </div>
+            <div id="addTaskForm" style="display:none;">
+                <form action="{% url 'add_task' %}" method="post">
+                    {% csrf_token %}
+                    <input type="text" name="nome" placeholder="Nome da Tarefa" required>
+                    <input type="text" name="categoria" placeholder="Categoria da Tarefa" required>
+                    <button type="submit">Adicionar</button>
+                    <button type="button" onclick="document.getElementById('addTaskForm').style.display='none'">Cancelar</button>
+                </form>
             </div>
         </div>
     
     </main>
+    
     <footer class="footer">
         <p>meric</p>
     </footer>
+    
+    <script>
+        
+        function deleteTask(taskId) {
+            if (confirm('Tem certeza que deseja remover esta tarefa?')) {
+                fetch(`{% url 'delete_task' %}?id=${taskId}`, {
+                    method: 'POST',
+                    headers: {
+                        'X-CSRFToken': '{{ csrf_token }}',
+                    },
+                }).then(response => {
+                    if (response.ok) {
+                        location.reload();
+                    } else {
+                        alert('Erro ao remover a tarefa.');
+                    }
+                });
+            }
+        }
+        
+        function toggleTaskStatus(taskId) {
+            fetch(`{% url 'toggle_task_status' %}?id=${taskId}`, {
+                method: 'POST',
+                headers: {
+                    'X-CSRFToken': '{{ csrf_token }}',
+                },
+            }).then(response => {
+                if (response.ok) {
+                    location.reload();
+                } else {
+                    alert('Erro ao alterar o estado da tarefa.');
+                }
+            });
+        }
+        
+    </script>
 </body>
 
 </html>

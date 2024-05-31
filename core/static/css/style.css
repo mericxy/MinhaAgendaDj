@@ -13,7 +13,7 @@ body {
 }
 
 .content {
-  min-height: calc(100vh - 50px);
+  min-height: calc(100vh - 50px - 30px);
 }
 
 .header {
@@ -47,6 +47,7 @@ body {
 }
 
 .boxHeader {
+  min-width: 600px;
   background-color: #8a8a8a;
   display: flex;
   justify-content: end;
@@ -60,21 +61,6 @@ body {
   padding: 5px;
   box-shadow: 0px 1px 1px 0px rgba(67, 65, 65, 0.614);
 }
-
-/* style Formulario */
-
-.form-control {
-    color: #000000;           /* Cor do texto branca */
-    border: 1px solid #ccc;   /* Borda padrão */
-    padding: 10px;            /* Espaçamento interno */
-    border-radius: 4px;       /* Bordas arredondadas */
-}
-
-.text-danger {
-    color: #dc3545; /* Cor de erro vermelha do Bootstrap */
-}
-
-/* style Formulario */
 
 .taskBox {
   display: flex;
@@ -90,13 +76,11 @@ body {
 .taskBox li {
   display: flex;
   flex-direction: column;
-  border-bottom: 1px solid #ddd;  /* Adiciona uma linha entre os itens */
-  padding: 10px;  /* Espaçamento interno para os itens */
+  border-bottom: 1px solid #ddd;
+  padding: 10px;
 }
 
-.taskBox li p {
-  margin: 0;  /* Remove a margem padrão dos parágrafos */
-}
+
 
 .footer {
   margin-top: 10px;
@@ -108,24 +92,11 @@ body {
 
 .footer p {
   background: transparent;
-  text-align: center;
 }
 
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.5); 
-}
-.modal-content {
-  background-color: #fefefe;
-  margin: 15% auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 40%;
+@media (max-width: 650px) {
+  .boxHeader {
+    min-width: 250px;
+
+  }
 }
