@@ -6,7 +6,7 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
     </style>
-    
+
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,12 +15,11 @@
 
 <body>
     <header class="header">
-            <p class="titulo">Minha Agenda</p>
-            <p>login</p>
-        </header>
-    
+        <p class="titulo">Minha Agenda</p>
+    </header>
     <main class="content">
-    
+   
+
         <div class="centralize">
             <div class="mainBox">
                 <div class="boxHeader">
@@ -44,26 +43,33 @@
                     {% endfor %}
                 </ul>
             </div>
-            <div id="addTaskForm" style="display:none;">
-                <form action="{% url 'add_task' %}" method="post">
+        
+            <div id="addTaskForm" class="form-container" style="display:none;">
+                <form action="{% url 'add_task' %}" method="post" class="formulario-tarefa">
                     {% csrf_token %}
-                    <input type="text" name="nome" placeholder="Nome da Tarefa" required>
-                    <input type="text" name="categoria" placeholder="Categoria da Tarefa" required>
-                    <button type="submit">Adicionar</button>
-                    <button type="button" onclick="document.getElementById('addTaskForm').style.display='none'">Cancelar</button>
+                    <div class="form-group">
+                        <label for="nome">Nome da Tarefa</label>
+                        <input type="text" id="nome" name="nome" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="categoria">Categoria da Tarefa</label>
+                        <input type="text" id="categoria" name="categoria"required>
+                    </div>
+                    <div class="form-buttons">
+                        <button type="submit" class="btn btn-primary">Adicionar</button>
+                        <button type="button" class="btn btn-secondary" onclick="document.getElementById('addTaskForm').style.display='none'">Cancelar</button>
+                    </div>
                 </form>
             </div>
         </div>
-    
     </main>
-    
+
     <footer class="footer">
-        <p>meric</p>
+        <p>github.com/mericxy</p>
     </footer>
-    
+
     <script>
-        
-        function deleteTask(taskId) {
+         function deleteTask(taskId) {
             if (confirm('Tem certeza que deseja remover esta tarefa?')) {
                 fetch(`{% url 'delete_task' %}?id=${taskId}`, {
                     method: 'POST',
@@ -94,8 +100,8 @@
                 }
             });
         }
-        
     </script>
+
 </body>
 
 </html>
