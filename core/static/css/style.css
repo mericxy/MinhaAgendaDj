@@ -1,7 +1,10 @@
+
 * {
   padding: 0;
   margin: 0;
   background-color: white;
+  font-family: Playfair Display, serif;
+  font-weight: 500;
 }
 
 html,
@@ -37,17 +40,18 @@ body {
 .mainBox {
   max-width: 600px;
   background-color: white;
-  display: flexbox;
   padding: 0px;
   border: 3px solid #8a8a8a;
   border-radius: 5px;
   margin: 0 10%;
 }
+
 .boxHeader {
   background-color: #8a8a8a;
   display: flex;
   justify-content: end;
 }
+
 .boxHeader button {
   margin: 5px;
   background-color: white;
@@ -56,17 +60,43 @@ body {
   padding: 5px;
   box-shadow: 0px 1px 1px 0px rgba(67, 65, 65, 0.614);
 }
+
+/* style Formulario */
+
+.form-control {
+    color: #000000;           /* Cor do texto branca */
+    border: 1px solid #ccc;   /* Borda padrão */
+    padding: 10px;            /* Espaçamento interno */
+    border-radius: 4px;       /* Bordas arredondadas */
+}
+
+.text-danger {
+    color: #dc3545; /* Cor de erro vermelha do Bootstrap */
+}
+
+/* style Formulario */
+
 .taskBox {
   display: flex;
+  flex-direction: column;
   border: 3px white solid;
   border-radius: 5px;
   min-width: 100px;
   max-width: 600px;
-  flex-wrap: wrap;
-  /* flex-direction: column; */
+  padding: 0;  /* Remover padding padrão da ul */
+  list-style-type: none;  /* Remover bullets padrão */
 }
-/* .taskBox p {
-} */
+
+.taskBox li {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid #ddd;  /* Adiciona uma linha entre os itens */
+  padding: 10px;  /* Espaçamento interno para os itens */
+}
+
+.taskBox li p {
+  margin: 0;  /* Remove a margem padrão dos parágrafos */
+}
 
 .footer {
   margin-top: 10px;
@@ -92,8 +122,6 @@ body {
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.5); 
 }
-
-
 .modal-content {
   background-color: #fefefe;
   margin: 15% auto;

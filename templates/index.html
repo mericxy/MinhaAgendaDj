@@ -1,8 +1,13 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="../css/style.css">
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+    </style>
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
@@ -15,36 +20,54 @@
             <p>login</p>
         </header>
         <div class="centralize">
+        
             <div class="mainBox">
-                <div class="boxHeader">
-                    <button id="btnAdd">Add</button>
-                    <button id="btnRemove">Remover</button>
+               <div class="boxHeader">
+                       <form method="post" action="{% url 'adicionar_tarefa' %}">
+                        {% csrf_token %}
+                        {{ form.non_field_errors }}
+                        <div class="form-group">
+                            {{ form.nome.label_tag }} 
+                            {% for error in form.nome.errors %}
+                                <div class="text-danger">{{ error }}</div>
+                            {% endfor %}
+                            {{ form.nome }}
+                        </div>
+                        <div class="form-group">
+                            {{ form.categoria.label_tag }}
+                            {% for error in form.categoria.errors %}
+                                <div class="text-danger">{{ error }}</div>
+                            {% endfor %}
+                            {{ form.categoria }}
+                        </div>
+                        <button type="submit" class="btn btn-primary">Add</button>
+                    </form>
+                    
                 </div>
+            
                 <ul class="taskBox">
-
+                    {% for tarefa in tarefas %}
+                        <li>
+                             <p>
+                                Nome: {{ tarefa.nome }}<br>
+                                Categoria: {{ tarefa.categoria }}<br>
+                                 {% if tarefa.estado == True %}
+                                     Estado: <span style="color: darkgreen;" >Concluido</span>
+                                 {% else %}
+                                     Estado: <span style="color: red">Pendente</span>
+                                 {% endif %}
+                             </p>
+                        </li>
+                    {% endfor %}
                 </ul>
+            
             </div>
         </div>
+    
     </main>
     <footer class="footer">
         <p>meric</p>
     </footer>
-
-    <!-- Modal para adicionar uma tarefa-->
-    <div id="modal" class="modal">
-        <div class="modal-content" style="width: 20%; align-items: center;">
-            <h2>Adicionar Tarefa</h2><br>
-            <form action="/adicionar_tarefa" method="post">
-                <input class="form-control" type="text" id="nomeTarefa" name="nomeDaTarefa" placeholder="Nome da Tarefa"
-                    autocomplete="off">
-                <br>
-                <button class="btn btn-primary" type="submit">Confirmar</button>
-                <button class="btn btn-danger" id="cancelButton" type="button">Cancelar</button>
-            </form>
-        </div>
-    </div>
-
-    <script src="../javaScript/script.js"></script>
 </body>
 
 </html>
