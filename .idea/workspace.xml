@@ -5,10 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8d44ea5a-75bd-461c-839a-69985372be49" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/static/images/background.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/core/static/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
     </list>
@@ -21,6 +22,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -48,7 +50,7 @@
     "django.template.preview.state": "SHOW_EDITOR",
     "git-widget-placeholder": "teste1",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/ericv/PycharmProjects/MinhaAgenda/core/static/js",
+    "last_opened_file_path": "C:/Users/ericv/PycharmProjects/MinhaAgenda/core/static/images",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -59,6 +61,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ericv\PycharmProjects\MinhaAgenda\core\static\images" />
       <recent name="C:\Users\ericv\PycharmProjects\MinhaAgenda\core\static\js" />
       <recent name="C:\Users\ericv\PycharmProjects\MinhaAgenda\core\static\css" />
       <recent name="C:\Users\ericv\PycharmProjects\MinhaAgenda\templates" />
@@ -108,7 +111,7 @@
       <option name="presentableId" value="Default" />
       <updated>1717102172841</updated>
       <workItem from="1717102174214" duration="18599000" />
-      <workItem from="1717179351854" duration="1851000" />
+      <workItem from="1717179351854" duration="8579000" />
     </task>
     <task id="LOCAL-00001" summary="Primeiro commit, funcionalidade adicionar e visualizar">
       <option name="closed" value="true" />

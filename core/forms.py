@@ -25,4 +25,3 @@ class TarefaForm(forms.ModelForm):
                 'required': '',
             },
         }
-
